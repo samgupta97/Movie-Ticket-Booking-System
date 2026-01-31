@@ -1,0 +1,54 @@
+//package com.movieticketbooking.dto;
+//
+//import java.math.BigDecimal;
+//
+//import lombok.Data;
+//
+////this dto class will help customer to select the Show Seat for the Booking
+//
+//@Data
+//public class ShowSeatBookingData extends CommonApiResponse {
+//
+//	// here we will store the Booking Id (primary key of Booking entity)
+//	private int id;
+//
+//	// below details are from table ShowSeat
+//	// to show the Seat Booking Details
+//	private String seatNumber; // Example: A1, B2
+//
+//	private String seatType; // REGULAR, PREMIUM, GOLD
+//
+//	private String seatPosition; // Left, Right, Middle
+//
+//	private BigDecimal price;
+//	
+//	private String status;  // from Booking entity
+//
+//}
+
+package com.movieticketbooking.dto;
+
+import java.math.BigDecimal;
+
+import lombok.Data;
+
+//this dto class will help customer to select the Show Seat for the Booking
+
+@Data
+public class ShowSeatBookingData extends CommonApiResponse {
+
+    // ShowSeat ID
+    private int id;
+
+    // this is from Booking table (primary key of booking row)
+    private int bookingTableId;
+
+    // below details are from ShowSeat
+    private String seatNumber; 
+    private String seatType; 
+    private String seatPosition; 
+    private BigDecimal price;
+
+    // seat status (AVAILABLE / BOOKED)
+    private String status;
+}
